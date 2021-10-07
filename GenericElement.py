@@ -3,7 +3,7 @@ class GenericElement:
     def __init__(self):
         """Constructor of Generic Element Class"""
         self.element_name = ""
-        self.format = ""
+        self.format = None
     
     def set_element_name(self, element_name):
         """Setter for element name"""
