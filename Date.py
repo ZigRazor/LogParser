@@ -212,180 +212,43 @@ class Date(GenericElement.GenericElement):
         return
 
     def _has_microsecond(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND
+        return self.date_format in (DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND)
 
     def _has_second(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND
+        return self.date_format in (DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND)
 
     def _has_minute(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE
+        return self.date_format in (DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE)
 
     def _has_hour(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR
+        return self.date_format in (DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR)
 
     def _third_digit_month(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH
+        return self.date_format in (DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR, DateFormat.DateFormat.YEAR_DAY_MONTH, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR, DateFormat.DateFormat.DAY_YEAR_MONTH)
 
     def _third_digit_year(self):
-        return self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR
+        return self.date_format in (DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR, DateFormat.DateFormat.DAY_MONTH_YEAR, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR, DateFormat.DateFormat.MONTH_DAY_YEAR)
 
     def _third_digit_day(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY
+        return self.date_format in (DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR, DateFormat.DateFormat.YEAR_MONTH_DAY, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR, DateFormat.DateFormat.MONTH_YEAR_DAY)
 
     def _second_digit_year(self):
-        return self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH
+        return self.date_format in (DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR, DateFormat.DateFormat.MONTH_YEAR_DAY, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR, DateFormat.DateFormat.DAY_YEAR_MONTH)
 
     def _second_digit_day(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR
+        return self.date_format in (DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR, DateFormat.DateFormat.YEAR_DAY_MONTH, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR, DateFormat.DateFormat.MONTH_DAY_YEAR)
 
     def _second_digit_month(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR
+        return self.date_format in (DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR, DateFormat.DateFormat.YEAR_MONTH_DAY, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR, DateFormat.DateFormat.DAY_MONTH_YEAR)
 
     def _first_digit_month(self):
-        return self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_DAY_YEAR or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR or \
-            self.date_format == DateFormat.DateFormat.MONTH_YEAR_DAY
+        return self.date_format in (DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR_MINUTE, DateFormat.DateFormat.MONTH_DAY_YEAR_HOUR, DateFormat.DateFormat.MONTH_DAY_YEAR, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR_MINUTE, DateFormat.DateFormat.MONTH_YEAR_DAY_HOUR, DateFormat.DateFormat.MONTH_YEAR_DAY)
 
     def _first_digit_day(self):
-        return self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_MONTH_YEAR or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.DAY_YEAR_MONTH
+        return self.date_format in (DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR_MINUTE, DateFormat.DateFormat.DAY_MONTH_YEAR_HOUR, DateFormat.DateFormat.DAY_MONTH_YEAR, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR_MINUTE, DateFormat.DateFormat.DAY_YEAR_MONTH_HOUR, DateFormat.DateFormat.DAY_YEAR_MONTH)
 
     def _first_digit_year(self):
-        return self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR or \
-            self.date_format == DateFormat.DateFormat.YEAR_MONTH_DAY or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR or \
-            self.date_format == DateFormat.DateFormat.YEAR_DAY_MONTH
+        return self.date_format in (DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE, DateFormat.DateFormat.YEAR_MONTH_DAY_HOUR, DateFormat.DateFormat.YEAR_MONTH_DAY, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND_MICROSECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE_SECOND, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR_MINUTE, DateFormat.DateFormat.YEAR_DAY_MONTH_HOUR, DateFormat.DateFormat.YEAR_DAY_MONTH)
 
     def get_date_string(self):
         """Return date as string"""
