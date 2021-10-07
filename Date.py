@@ -128,7 +128,7 @@ class Date(GenericElement.GenericElement):
         #date_string = date_string.split()
         #date_string = date_string[0].split('-')
         print(date_string)
-        date_string = re.split(' |\-|\:|\.', date_string)
+        date_string = re.split(r' |\-|\:|\.', date_string)
         print(date_string)
         date_string_len = len(date_string)
         index = 0
