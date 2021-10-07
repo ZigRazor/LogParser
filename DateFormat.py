@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class DateFormat(Enum):
     """
     Date Format Enum
@@ -37,4 +38,3 @@ class DateFormat(Enum):
 
     def __str__(self):
         return self.name
-    

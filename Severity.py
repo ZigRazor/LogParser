@@ -2,7 +2,8 @@ from enum import Enum
 
 import GenericElement
 
-class Severity(Enum,GenericElement.GenericElement):
+
+class Severity(Enum, GenericElement.GenericElement):
     """
     Severity of the Log.
     """

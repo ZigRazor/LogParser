@@ -1,10 +1,11 @@
 class GenericElement:
     """GenericElement Class"""
+
     def __init__(self):
         """Constructor of Generic Element Class"""
         self.element_name = ""
         self.format = None
-    
+
     def set_element_name(self, element_name):
         """Setter for element name"""
         self.element_name = element_name
@@ -32,7 +33,7 @@ class GenericElement:
     def __eq__(self, other):
         """Equality operator"""
         return self.element_name == other.element_name and self.format == other.format
-    
+
     def __ne__(self, other):
         """Inequality operator"""
         return not self.__eq__(other)
@@ -40,4 +41,3 @@ class GenericElement:
     def __hash__(self):
         """Hash function"""
         return hash(self.element_name) ^ hash(self.format)
-
