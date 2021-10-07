@@ -6,7 +6,7 @@ import re
 
 def main():
     log_parser = LogParser.LogParser()
-    log_parser.add_file("./test1.txt");
+    log_parser.add_file("./test1.txt")
 
     date = Date.Date()
     date.set_element_name("date")
@@ -14,12 +14,13 @@ def main():
     print(date.get_date_format())
     date.set_date_format(DateFormat.YEAR_MONTH_DAY)
     print(date.get_date_format())
-    log_parser.add_element("Date",date)
+    log_parser.add_element("Date", date)
     log_parser.add_key("Date")
 
     a = log_parser.parse_log()
 
     print(a)
+
 
 if __name__ == "__main__":
     main()
