@@ -8,6 +8,7 @@ class Date(GenericElement.GenericElement):
 
     def __init__(self):
         """Initialize Date Class"""
+        GenericElement.GenericElement.__init__(self)
         self.year = 0
         self.month = 0
         self.day = 0
@@ -48,6 +49,10 @@ class Date(GenericElement.GenericElement):
     def __ne__(self, other):
         """Return True if self is not equal to other"""
         return not self == other
+
+    def __hash__(self):
+        """Return hash"""
+        return hash((self.year, self.month, self.day, self.hour, self.minute, self.second, self.microsecond))
 
     def get_year(self):
         """Return year"""

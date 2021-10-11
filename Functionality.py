@@ -6,6 +6,7 @@ class Functionality(GenericElement.GenericElement):
 
     def __init__(self):
         """Constructor of Functionality Class"""
+        GenericElement.GenericElement.__init__(self)
         self.name = ""
 
     def set_name(self, name):
