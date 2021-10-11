@@ -1,6 +1,7 @@
 from DateFormat import DateFormat
 import LogParser
 import Date
+import Severity
 import re
 
 
@@ -16,6 +17,11 @@ def main():
     print(date.get_date_format())
     log_parser.add_element("Date", date)
     log_parser.add_key("Date")
+
+    severity = Severity.Severity()
+    severity.set_element_name("severity")
+    log_parser.add_element("Severity", severity)
+    log_parser.add_key("Severity")
 
     a = log_parser.parse_log()
 

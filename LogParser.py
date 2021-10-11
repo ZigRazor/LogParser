@@ -1,5 +1,8 @@
 import re
 import GenericElement
+import Date
+import Severity
+import copy
 
 
 class LogParser:
@@ -93,19 +96,34 @@ class LogParser:
     def parse_log(self):
         """Parse log files"""
         result = {}
+        print(self.keys)
         for key in self.keys:
             result[key] = {}
         for file in self.file_list:
             with open(file, 'r') as f:
                 for line in f:
-                    print(line)
+                    #print(line)
                     for element in self.elements.items():
-                        print(element)
+                        #print(element)
                         regex = re.compile(element[1].get_format())
-                        print(regex)
+                        #print(regex)
                         match = regex.search(line)
-                        element[1].set_date_from_string(match.group())
                         print(match)
-                        print(element)
+                        if(match):
+                            if isinstance(element[1],Date.Date):
+                                element[1].set_date_from_string(match.group())
+                                print(element)
+                                if element[0] in self.keys:
+                                    result[element[0]][copy.deepcopy(element[1])] = None
+                            elif isinstance(element[1],Severity.Severity):
+                                element[1].set_severity_from_string(match.group())
+                                print(element)
+                                if element[0] in self.keys:
+                                    result[element[0]][copy.deepcopy(element[1])] = None
+                            else :
+                                raise Exception("Not Known Element Type")
+                        else:
+                            raise Exception("No Match")
                         # pass
+        print (result)
         return True
