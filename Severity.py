@@ -22,7 +22,7 @@ class Severity(GenericElement.GenericElement):
     def __init__(self):
         """ Constructor of Severity Class"""
         super().__init__()
-        #super().set_format("/trace|debug|info|error|critical/gi")
+        # super().set_format("/trace|debug|info|error|critical/gi")
         super().set_format('(?i)trace|debug|info|error|critical')
         self.severity = SeverityEnum.INFO
 
@@ -109,7 +109,7 @@ class Severity(GenericElement.GenericElement):
         :return: int
         """
         return hash(self.severity)
-    
+
     def __getstate__(self):
         """
         Return the state of the severity.
