@@ -24,7 +24,7 @@ def read(*names, **kwargs):
 
 
 setup(
-    name='LogParser',
+    name='PyLogParser',
     version='0.0.1',
     license='GNU GENERAL PUBLIC LICENSE',
     description='LogParser Package',
