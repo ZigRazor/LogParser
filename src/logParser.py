@@ -1,8 +1,10 @@
 import re
-import GenericElement
-import Date
-import Severity
 import copy
+from . import genericElement
+from . import date
+from . import severity
+from . import filename
+
 
 
 class LogParser:
@@ -14,13 +16,13 @@ class LogParser:
         self.elements = {}
         self.keys = []
 
-    def add_file(self, filename: str):
+    def add_file(self, _filename: str):
         """Add file to file_list"""
-        self.file_list.append(filename)
+        self.file_list.append(_filename)
 
-    def remove_file(self, filename: str):
+    def remove_file(self, _filename: str):
         """Remove file from file_list"""
-        self.file_list.remove(filename)
+        self.file_list.remove(_filename)
 
     def clear_file_list(self):
         """Clear file list"""
@@ -52,9 +54,9 @@ class LogParser:
 
     def add_key(self, key: str):
         """Add key to keys"""
-        if(key not in self.elements):
+        if key not in self.elements:
             raise Exception("Key not present in Elements")
-        if(key in self.keys):
+        if key in self.keys:
             raise Exception("Key already present in Keys")
         self.keys.append(key)
 
@@ -83,7 +85,7 @@ class LogParser:
         """Get element list string"""
         return '\n'.join(self.elements)
 
-    def add_element(self, key: str, value: GenericElement.GenericElement):
+    def add_element(self, key: str, value: genericElement.GenericElement):
         """Add element to elements"""
         self.elements[key] = value
 
@@ -104,29 +106,34 @@ class LogParser:
                 for line in f:
                     # print(line)
                     for element in self.elements.items():
-                        # print(element)
-                        regex = re.compile(element[1].get_format())
-                        # print(regex)
-                        match = regex.search(line)
-                        print(match)
-                        if(match):
-                            if isinstance(element[1], Date.Date):
-                                element[1].set_date_from_string(match.group())
-                                print(element)
-                                if element[0] in self.keys:
-                                    result[element[0]][copy.deepcopy(
-                                        element[1])] = None
-                            elif isinstance(element[1], Severity.Severity):
-                                element[1].set_severity_from_string(
-                                    match.group())
-                                print(element)
-                                if element[0] in self.keys:
-                                    result[element[0]][copy.deepcopy(
-                                        element[1])] = None
-                            else:
-                                raise Exception("Not Known Element Type")
+                        if isinstance(element[1], filename.Filename):
+                            element[1].set_name(file)
+                            if element[0] in self.keys:
+                                result[element[0]][copy.deepcopy(element[1])] = None
                         else:
-                            raise Exception("No Match")
-                        # pass
+                            # print(element)
+                            regex = re.compile(element[1].get_format())
+                            # print(regex)
+                            match = regex.search(line)
+                            print(match)
+                            if match:
+                                if isinstance(element[1], date.Date):
+                                    element[1].set_date_from_string(match.group())
+                                    print(element)
+                                    if element[0] in self.keys:
+                                        result[element[0]][copy.deepcopy(
+                                            element[1])] = None
+                                elif isinstance(element[1], severity.Severity):
+                                    element[1].set_severity_from_string(
+                                        match.group())
+                                    print(element)
+                                    if element[0] in self.keys:
+                                        result[element[0]][copy.deepcopy(
+                                            element[1])] = None
+                                else:
+                                    raise Exception("Not Known Element Type")
+                            else:
+                                raise Exception("No Match")
+                            # pass
         print(result)
         return True
