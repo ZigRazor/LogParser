@@ -6,7 +6,6 @@ from . import severity
 from . import filename
 
 
-
 class LogParser:
     """LogParser Class"""
 
@@ -109,7 +108,8 @@ class LogParser:
                         if isinstance(element[1], filename.Filename):
                             element[1].set_name(file)
                             if element[0] in self.keys:
-                                result[element[0]][copy.deepcopy(element[1])] = None
+                                result[element[0]][copy.deepcopy(
+                                    element[1])] = None
                         else:
                             # print(element)
                             regex = re.compile(element[1].get_format())
@@ -118,7 +118,8 @@ class LogParser:
                             print(match)
                             if match:
                                 if isinstance(element[1], date.Date):
-                                    element[1].set_date_from_string(match.group())
+                                    element[1].set_date_from_string(
+                                        match.group())
                                     print(element)
                                     if element[0] in self.keys:
                                         result[element[0]][copy.deepcopy(

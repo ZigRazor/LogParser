@@ -1,11 +1,10 @@
+from src.filename import Filename
+from src.severity import Severity
+from src.date import Date
+from src.logParser import LogParser
+from src.dateFormat import DateFormat
 import sys
 sys.path.insert(1, '')
-
-from src.dateFormat import DateFormat
-from src.logParser import LogParser
-from src.date import Date
-from src.severity import Severity
-from src.filename import Filename
 
 
 def main():
@@ -30,7 +29,6 @@ def main():
     filename.set_element_name("filename")
     log_parser.add_element("Filename", filename)
     log_parser.add_key("Filename")
-    
 
     a = log_parser.parse_log()
 

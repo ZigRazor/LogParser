@@ -39,7 +39,7 @@ setup(
     author_email='zigrazor@gmail.com',
     url='https://github.com/ZigRazor/LogParser',
     packages=[],
-    package_dir={"" : "src"},
+    package_dir={"": "src"},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
     data_files=[('', ['LICENSE']), ('', ['README.md'])],
     include_package_data=True,
