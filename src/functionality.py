@@ -1,12 +1,12 @@
-import GenericElement
+from .genericElement import GenericElement
 
 
-class Functionality(GenericElement.GenericElement):
+class Functionality(GenericElement):
     """ Functionality Class"""
 
     def __init__(self):
         """Constructor of Functionality Class"""
-        GenericElement.GenericElement.__init__(self)
+        GenericElement.__init__(self)
         self.name = ""
 
     def set_name(self, name):

@@ -6,13 +6,13 @@ class GenericElement:
         self.element_name = ""
         self.format = None
 
-    def set_element_name(self, element_name):
+    def set_element_name(self, _element_name):
         """Setter for element name"""
-        self.element_name = element_name
+        self.element_name = _element_name
 
-    def set_format(self, format):
+    def set_format(self, _format):
         """Setter for format"""
-        self.format = format
+        self.format = _format
 
     def get_element_name(self):
         """Getter for element name"""

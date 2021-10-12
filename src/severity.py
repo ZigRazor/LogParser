@@ -1,6 +1,6 @@
 from enum import Enum
 
-import GenericElement
+from .genericElement import GenericElement
 
 
 class SeverityEnum(Enum):
@@ -14,7 +14,7 @@ class SeverityEnum(Enum):
     CRITICAL = 5
 
 
-class Severity(GenericElement.GenericElement):
+class Severity(GenericElement):
     """
     Severity of the Log.
     """
