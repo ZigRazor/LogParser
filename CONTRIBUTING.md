@@ -12,7 +12,7 @@ If not, open a new issue and state the problem. Please provide a clear summary o
 
 ## Submitting Changes
 
-We also highly welcome code contributions via pull requests. Note that your changes - after acceptance - will be offered under the **Apache 2.0** license. For more information, see the [LICENSE](https://github.com/ZigRazor/AHGPBM/blob/main/LICENSE).
+We also highly welcome code contributions via pull requests. Note that your changes - after acceptance - will be offered under the **GNU General Public License v3.0** license. For more information, see the [LICENSE](https://github.com/ZigRazor/AHGPBM/blob/main/LICENSE).
 
 To create and submit your changes, follow the standard *Fork & Pull Request Workflow*:
 
